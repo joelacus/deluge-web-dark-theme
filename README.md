@@ -1,4 +1,4 @@
-# deluge-web-dark-theme
+# Deluge Web UI Dark Theme
 A modern dark theme for Deluge Web UI with custom accent colours and updated icons.
 
 ![Alt text](screenshot.png?raw=true "Optional Title")
