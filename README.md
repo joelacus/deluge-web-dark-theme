@@ -1,7 +1,7 @@
 # Deluge Web UI Dark Theme
 A modern dark theme for Deluge Web UI with custom accent colours and updated icons.
 
-Works with Deluge 2 and 1.3, the theme files may be in a different location.
+Works with Deluge 2 and 1.3.
 
 ![Alt text](screenshot.png?raw=true "Optional Title")
 
