@@ -1,7 +1,7 @@
 # Deluge Web UI Dark Theme
 A modern dark theme for Deluge Web UI with custom accent colours and updated icons.
 
-Works with Deluge 2 and 1.3.
+Works with Deluge 2, 1.3, and docker.
 
 ![Alt text](screenshot.png?raw=true "Optional Title")
 
@@ -82,6 +82,43 @@ deluge-web
 6) (optional) You can change the accent colour by editing this file:
 ```
 sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/themes/css/xtheme-dark.css
+```
+  Replace the values in the line `--accent: 156,39,176;` with any RGB value.
+
+7) Enjoy! :)
+
+### Deluge Docker
+
+1) Stop the deluge docker container. List your docker containers with this command to find the ID `sudo docker container ls`
+```
+sudo docker stop <Container ID>
+```
+  
+2) Find the deluge docker install path:
+```
+sudo find / -type d -name 'web'
+```
+  Example: `/var/lib/docker/overlay2/<NUMBER>/diff/usr/lib/python3/dist-packages/deluge/ui/web`
+
+3) Install the theme. Replace `<PATH>` in the install command with the path found previously which contains `diff` and ends with `/ui/web`
+```
+sudo wget -c https://github.com/joelacus/deluge-web-dark-theme/raw/main/deluge_web_dark_theme.tar.gz -O - | sudo tar -xz -C <PATH>
+```
+
+4) Edit web.conf to set the theme. Scroll to the bottom and change `"theme": "gray"` to `"theme": "dark"`
+```
+sudo nano /path/to/deluge/config/web.conf
+```
+  If the web.conf file is not there, search for it with `sudo find / -type f -name 'web.conf'`
+
+5) Restart the deluge docker container:
+```
+sudo docker start <Container ID>
+```
+
+6) (optional) You can change the accent colour by editing this file. Replace `<PATH>` with the path used in step 3:
+```
+sudo nano <PATH>/themes/css/xtheme-dark.css
 ```
   Replace the values in the line `--accent: 156,39,176;` with any RGB value.
 
