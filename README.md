@@ -81,7 +81,7 @@ deluge-web
 
 6) (optional) You can change the accent colour by editing this file:
 ```
-sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/themes/css/xtheme-dark.css
+sudo nano /usr/lib/python2.7/dist-packages/deluge/ui/web/themes/css/xtheme-dark.css
 ```
   Replace the values in the line `--accent: 156,39,176;` with any RGB value.
 
