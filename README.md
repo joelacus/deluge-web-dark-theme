@@ -15,7 +15,7 @@ pkill deluge-web
 ```
 2) (optional) Backup old files.
 ```
-sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/icons/ /usr/lib/python3/dist-packages/deluge/ui/web/icons.bak & sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/css/deluge.css /usr/lib/python3/dist-packages/deluge/ui/web/css/deluge.css.bak
+sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/icons/ /usr/lib/python3/dist-packages/deluge/ui/web/icons.bak & sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/css/deluge.css /usr/lib/python3/dist-packages/deluge/ui/web/css/deluge.css.bak & sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/css/ext-extensions.css /usr/lib/python3/dist-packages/deluge/ui/web/css/ext-extensions.css.bak & sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/images/ /usr/lib/python3/dist-packages/deluge/ui/web/images.bak
 ```
 
 3) Install the theme:
@@ -55,7 +55,7 @@ pkill deluge-web
 ```
 2) (optional) Backup old files.
 ```
-sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/icons/ /usr/lib/python2.7/dist-packages/deluge/ui/web/icons.bak & sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/css/deluge.css /usr/lib/python2.7/dist-packages/deluge/ui/web/css/deluge.css.bak
+sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/icons/ /usr/lib/python2.7/dist-packages/deluge/ui/web/icons.bak & sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/css/deluge.css /usr/lib/python2.7/dist-packages/deluge/ui/web/css/deluge.css.bak & sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/css/ext-extensions.css /usr/lib/python2.7/dist-packages/deluge/ui/web/css/ext-extensions.css.bak & sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/images/ /usr/lib/python2.7/dist-packages/deluge/ui/web/images.bak
 ```
 
 3) Install the theme:
