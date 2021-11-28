@@ -1,19 +1,19 @@
 # Deluge Web UI Dark Theme
 A modern dark theme for Deluge Web UI with custom accent colours and updated icons.
 
-Works with Deluge 2, 1.3, and docker.
+Works with Deluge 2, 1.3, Docker, and TrueNAS.
 
 ![Alt text](screenshot.png?raw=true "Optional Title")
 
 ## INSTALL
 
-### Deluge 2
+## Deluge 2
 
 1) Stop deluge-web:
 ```
 pkill deluge-web
 ```
-2) (optional) Backup old files.
+2) (optional) Backup old files:
 ```
 sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/icons/ /usr/lib/python3/dist-packages/deluge/ui/web/icons.bak & sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/css/deluge.css /usr/lib/python3/dist-packages/deluge/ui/web/css/deluge.css.bak & sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/css/ext-extensions.css /usr/lib/python3/dist-packages/deluge/ui/web/css/ext-extensions.css.bak & sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/images/ /usr/lib/python3/dist-packages/deluge/ui/web/images.bak
 ```
@@ -47,13 +47,13 @@ sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/themes/css/xtheme-dark.cs
 
 7) Enjoy! :)
 
-### Deluge 1.3
+## Deluge 1.3
 
 1) Stop deluge-web:
 ```
 pkill deluge-web
 ```
-2) (optional) Backup old files.
+2) (optional) Backup old files:
 ```
 sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/icons/ /usr/lib/python2.7/dist-packages/deluge/ui/web/icons.bak & sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/css/deluge.css /usr/lib/python2.7/dist-packages/deluge/ui/web/css/deluge.css.bak & sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/css/ext-extensions.css /usr/lib/python2.7/dist-packages/deluge/ui/web/css/ext-extensions.css.bak & sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/images/ /usr/lib/python2.7/dist-packages/deluge/ui/web/images.bak
 ```
@@ -87,7 +87,7 @@ sudo nano /usr/lib/python2.7/dist-packages/deluge/ui/web/themes/css/xtheme-dark.
 
 7) Enjoy! :)
 
-### Deluge Docker
+## Deluge Docker
 
 1) Stop the deluge docker container. List your docker containers with this command to find the ID `sudo docker container ls`
 ```
@@ -123,3 +123,44 @@ sudo nano <PATH>/themes/css/xtheme-dark.css
   Replace the values in the line `--accent: 156,39,176;` with any RGB value.
 
 7) Enjoy! :)
+
+## Deluge TrueNAS
+Tested with TrueNAS Core TrueNAS-12.0-U6.1 Community Deluge Plugin based on 12.2-RELEASE-p11
+
+1) Switch to root inside the deluge plugin environment:
+```
+iocage console deluge
+```
+
+2) Stop deluge-web:
+```
+service deluge_web stop
+```
+
+3) (optional) Backup old files:
+```
+mv /usr/local/lib/python3.8/site-packages/deluge/ui/web/icons/ /usr/local/lib/python3.8/site-packages/deluge/ui/web/icons.bak & mv /usr/local/lib/python3.8/site-packages/deluge/ui/web/css/deluge.css /usr/local/lib/python3.8/site-packages/deluge/ui/web/css/deluge.css.bak & mv /usr/local/lib/python3.8/site-packages/deluge/ui/web/css/ext-extensions.css /usr/local/lib/python3.8/site-packages/deluge/ui/web/css/ext-extensions.css.bak & mv /usr/local/lib/python3.8/site-packages/deluge/ui/web/images/ /usr/local/lib/python3.8/site-packages/deluge/ui/web/images.bak
+```
+
+4) Install the theme:
+```
+fetch https://github.com/joelacus/deluge-web-dark-theme/raw/main/deluge_web_dark_theme.tar.gz && tar zxvf deluge_web_dark_theme.tar.gz -C /usr/local/lib/python3.8/site-packages/deluge/ui/web/
+```
+
+5) Edit web.conf to set the theme. This command changes `"theme": "gray"` to `"theme": "dark"`
+```
+sed -i '' -e "s/gray/dark/" ~deluge/.config/deluge/web.conf
+```
+
+6) Restart deluge-web
+```
+service deluge_web start
+```
+
+7) (optional) You can change the accent colour by editing this file:
+```
+nano /usr/local/lib/python3.8/site-packages/deluge/ui/web/themes/css/xtheme-dark.css
+```
+  Replace the values in the line `--accent: 156,39,176;` with any RGB value.
+
+8) Enjoy! :)
