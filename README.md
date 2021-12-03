@@ -1,5 +1,7 @@
-# Deluge Web UI Dark Theme
+# Deluge Web UI Dark Theme + Responsive Mobile UI
 A modern dark theme for Deluge Web UI with custom accent colours and updated icons.
+
+Automatically uses an optimised view for mobile devices with small screens.
 
 Works with Deluge 2, 1.3, Docker, and TrueNAS.
 
@@ -15,7 +17,7 @@ pkill deluge-web
 ```
 2) (optional) Backup old files:
 ```
-sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/icons/ /usr/lib/python3/dist-packages/deluge/ui/web/icons.bak & sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/css/deluge.css /usr/lib/python3/dist-packages/deluge/ui/web/css/deluge.css.bak & sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/css/ext-extensions.css /usr/lib/python3/dist-packages/deluge/ui/web/css/ext-extensions.css.bak & sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/images/ /usr/lib/python3/dist-packages/deluge/ui/web/images.bak
+sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/icons/ /usr/lib/python3/dist-packages/deluge/ui/web/icons.bak & sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/images/ /usr/lib/python3/dist-packages/deluge/ui/web/images.bak
 ```
 
 3) Install the theme:
@@ -34,18 +36,29 @@ sudo nano /var/lib/deluge/.config/deluge/web.conf
 
   If a file called `web.conf~` exists, delete it. This will overwrite web.conf when deluge-web is restarted.
 
-5) Restart deluge-web
+5) Edit `index.html` 
+```
+sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/index.html
+```
+  and add the following meta tag on the empty line 19 in the header:
+```
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+```
+ This prevents scaling issues on mobile devices.
+  
+
+6) Restart deluge-web
 ```
 deluge-web
 ```
 
-6) (optional) You can change the accent colour by editing this file:
+7) (optional) You can change the accent colour by editing this file:
 ```
 sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/themes/css/xtheme-dark.css
 ```
   Replace the values in the line `--accent: 156,39,176;` with any RGB value.
 
-7) Enjoy! :)
+8) Enjoy! :)
 
 ## Deluge 1.3
 
@@ -55,7 +68,7 @@ pkill deluge-web
 ```
 2) (optional) Backup old files:
 ```
-sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/icons/ /usr/lib/python2.7/dist-packages/deluge/ui/web/icons.bak & sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/css/deluge.css /usr/lib/python2.7/dist-packages/deluge/ui/web/css/deluge.css.bak & sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/css/ext-extensions.css /usr/lib/python2.7/dist-packages/deluge/ui/web/css/ext-extensions.css.bak & sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/images/ /usr/lib/python2.7/dist-packages/deluge/ui/web/images.bak
+sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/icons/ /usr/lib/python2.7/dist-packages/deluge/ui/web/icons.bak & sudo mv /usr/lib/python2.7/dist-packages/deluge/ui/web/images/ /usr/lib/python2.7/dist-packages/deluge/ui/web/images.bak
 ```
 
 3) Install the theme:
@@ -74,18 +87,28 @@ sudo nano /var/lib/deluge/.config/deluge/web.conf
 
   If a file called `web.conf~` exists, delete it. This will overwrite web.conf when deluge-web is restarted.
 
-5) Restart deluge-web
+5) Edit `index.html` 
+```
+sudo nano /usr/lib/python2.7/dist-packages/deluge/ui/web/index.html
+```
+  and add the following meta tag on the empty line 19 in the header:
+```
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+```
+ This prevents scaling issues on mobile devices.
+ 
+6) Restart deluge-web
 ```
 deluge-web
 ```
 
-6) (optional) You can change the accent colour by editing this file:
+7) (optional) You can change the accent colour by editing this file:
 ```
 sudo nano /usr/lib/python2.7/dist-packages/deluge/ui/web/themes/css/xtheme-dark.css
 ```
   Replace the values in the line `--accent: 156,39,176;` with any RGB value.
 
-7) Enjoy! :)
+8) Enjoy! :)
 
 ## Deluge Docker
 
@@ -111,18 +134,28 @@ sudo nano /path/to/deluge/config/web.conf
 ```
   If the web.conf file is not there, search for it with `sudo find / -type f -name 'web.conf'`
 
-5) Restart the deluge docker container:
+5) Edit `index.html`. Replace `<PATH>` with the path used in step 3:
+```
+sudo nano <PATH>/index.html
+```
+  and add the following meta tag on the empty line 19 in the header:
+```
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+```
+ This prevents scaling issues on mobile devices.
+ 
+6) Restart the deluge docker container:
 ```
 sudo docker start <Container ID>
 ```
 
-6) (optional) You can change the accent colour by editing this file. Replace `<PATH>` with the path used in step 3:
+7) (optional) You can change the accent colour by editing this file. Replace `<PATH>` with the path used in step 3:
 ```
 sudo nano <PATH>/themes/css/xtheme-dark.css
 ```
   Replace the values in the line `--accent: 156,39,176;` with any RGB value.
 
-7) Enjoy! :)
+8) Enjoy! :)
 
 ## Deluge TrueNAS
 Tested with TrueNAS Core TrueNAS-12.0-U6.1 Community Deluge Plugin based on 12.2-RELEASE-p11
@@ -139,7 +172,7 @@ service deluge_web stop
 
 3) (optional) Backup old files:
 ```
-mv /usr/local/lib/python3.8/site-packages/deluge/ui/web/icons/ /usr/local/lib/python3.8/site-packages/deluge/ui/web/icons.bak & mv /usr/local/lib/python3.8/site-packages/deluge/ui/web/css/deluge.css /usr/local/lib/python3.8/site-packages/deluge/ui/web/css/deluge.css.bak & mv /usr/local/lib/python3.8/site-packages/deluge/ui/web/css/ext-extensions.css /usr/local/lib/python3.8/site-packages/deluge/ui/web/css/ext-extensions.css.bak & mv /usr/local/lib/python3.8/site-packages/deluge/ui/web/images/ /usr/local/lib/python3.8/site-packages/deluge/ui/web/images.bak
+mv /usr/local/lib/python3.8/site-packages/deluge/ui/web/icons/ /usr/local/lib/python3.8/site-packages/deluge/ui/web/icons.bak & mv /usr/local/lib/python3.8/site-packages/deluge/ui/web/images/ /usr/local/lib/python3.8/site-packages/deluge/ui/web/images.bak
 ```
 
 4) Install the theme:
@@ -152,15 +185,25 @@ fetch https://github.com/joelacus/deluge-web-dark-theme/raw/main/deluge_web_dark
 sed -i '' -e "s/gray/dark/" ~deluge/.config/deluge/web.conf
 ```
 
-6) Restart deluge-web
+6) Edit `index.html` 
+```
+nano /usr/local/lib/python3.8/site-packages/deluge/ui/web/index.html
+```
+  and add the following meta tag on the empty line 19 in the header:
+```
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+```
+ This prevents scaling issues on mobile devices.
+
+7) Restart deluge-web
 ```
 service deluge_web start
 ```
 
-7) (optional) You can change the accent colour by editing this file:
+8) (optional) You can change the accent colour by editing this file:
 ```
 nano /usr/local/lib/python3.8/site-packages/deluge/ui/web/themes/css/xtheme-dark.css
 ```
   Replace the values in the line `--accent: 156,39,176;` with any RGB value.
 
-8) Enjoy! :)
+9) Enjoy! :)
