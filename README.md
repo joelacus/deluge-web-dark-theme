@@ -3,7 +3,7 @@ A modern dark theme for Deluge Web UI with custom accent colours and updated ico
 
 Automatically uses an optimised view for mobile devices with small screens.
 
-Works with Deluge 2, 1.3, Docker, and TrueNAS.
+Works with [Deluge 2](#deluge-2), [Deluge 1.3](#deluge-1), [Docker](#deluge-docker), and [TrueNAS](#deluge-truenas).
 
 ![Alt text](screenshot.png?raw=true "Optional Title")
 
@@ -60,7 +60,7 @@ sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/themes/css/xtheme-dark.cs
 
 8) Enjoy! :)
 
-## Deluge 1.3
+## Deluge 1
 
 1) Stop deluge-web:
 ```
