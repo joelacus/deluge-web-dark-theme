@@ -29,22 +29,22 @@ sudo wget -c https://github.com/joelacus/deluge-web-dark-theme/raw/main/deluge_w
 ```
 nano ~/.config/deluge/web.conf
 ```
-  If the web.conf file is not there, it might be here instead:
+&nbsp;&nbsp;&nbsp;If the web.conf file is not there, it might be here instead:
 ```
 sudo nano /var/lib/deluge/.config/deluge/web.conf
 ```
 
-  If a file called `web.conf~` exists, delete it. This will overwrite web.conf when deluge-web is restarted.
+&nbsp;&nbsp;&nbsp;If a file called `web.conf~` exists, delete it. This will overwrite web.conf when deluge-web is restarted.
 
 5) Edit `index.html` 
 ```
 sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/index.html
 ```
-  and add the following meta tag on the empty line 19 in the header:
+&nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header:
 ```
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 ```
- This prevents scaling issues on mobile devices.
+&nbsp;&nbsp;&nbsp;This prevents scaling issues on mobile devices.
   
 
 6) Restart deluge-web
@@ -56,9 +56,12 @@ deluge-web
 ```
 sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/themes/css/xtheme-dark.css
 ```
-  Replace the values in the line `--accent: 156,39,176;` with any RGB value.
+&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.
 
 8) Enjoy! :)
+
+<br />
+<br />
 
 ## Deluge 1
 
@@ -80,22 +83,22 @@ sudo wget -c https://github.com/joelacus/deluge-web-dark-theme/raw/main/deluge_w
 ```
 nano ~/.config/deluge/web.conf
 ```
-  If the web.conf file is not there, it might be here instead:
+&nbsp;&nbsp;&nbsp;If the web.conf file is not there, it might be here instead:
 ```
 sudo nano /var/lib/deluge/.config/deluge/web.conf
 ```
 
-  If a file called `web.conf~` exists, delete it. This will overwrite web.conf when deluge-web is restarted.
+&nbsp;&nbsp;&nbsp;If a file called `web.conf~` exists, delete it. This will overwrite web.conf when deluge-web is restarted.
 
 5) Edit `index.html` 
 ```
 sudo nano /usr/lib/python2.7/dist-packages/deluge/ui/web/index.html
 ```
-  and add the following meta tag on the empty line 19 in the header:
+&nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header:
 ```
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 ```
- This prevents scaling issues on mobile devices.
+&nbsp;&nbsp;&nbsp;This prevents scaling issues on mobile devices.
  
 6) Restart deluge-web
 ```
@@ -106,9 +109,12 @@ deluge-web
 ```
 sudo nano /usr/lib/python2.7/dist-packages/deluge/ui/web/themes/css/xtheme-dark.css
 ```
-  Replace the values in the line `--accent: 156,39,176;` with any RGB value.
+&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.
 
 8) Enjoy! :)
+
+<br />
+<br />
 
 ## Deluge Docker
 
@@ -116,46 +122,103 @@ sudo nano /usr/lib/python2.7/dist-packages/deluge/ui/web/themes/css/xtheme-dark.
 ```
 sudo docker stop <Container ID>
 ```
-  
-2) Find the deluge docker install path:
+&nbsp;&nbsp;&nbsp;If you are using [compose](https://docs.linuxserver.io/general/docker-compose), use this command:
+```
+docker-compose down
+```
+
+### Install Option 1
+2) Mount the theme as a volume with [compose](https://docs.linuxserver.io/general/docker-compose).
+
+&nbsp;&nbsp;&nbsp;2a) Create a directory to save the theme locally:
+```
+mkdir ~/docker_config/deluge/ui -p
+```
+&nbsp;&nbsp;&nbsp;2b) Download and extract the theme into the directory:
+```
+sudo wget -c https://github.com/joelacus/deluge-web-dark-theme/raw/main/deluge_web_dark_theme.tar.gz -O - | sudo tar -xz -C ~/docker_config/deluge/ui
+```
+&nbsp;&nbsp;&nbsp;2c) Edit `docker-compose.yml` and add the following under `deluge:volumes:`:
+```
+- ~/docker_config/deluge/ui/icons:/usr/lib/python3/dist-packages/deluge/ui/web/icons
+- ~/docker_config/deluge/ui/images:/usr/lib/python3/dist-packages/deluge/ui/web/images
+- ~/docker_config/deluge/ui/themes:/usr/lib/python3/dist-packages/deluge/ui/web/themes
+```
+&nbsp;&nbsp;&nbsp;Note: Your path may differ slightly. Such as `/usr/lib/python3.10/site-packages/deluge/...`
+
+&nbsp;&nbsp;&nbsp;Example:
+```
+deluge:
+    image: linuxserver/deluge:latest
+    container_name: deluge
+    volumes:
+      # dark theme
+      - ~/docker_config/deluge/ui/icons:/usr/lib/python3/dist-packages/deluge/ui/web/icons
+      - ~/docker_config/deluge/ui/images:/usr/lib/python3/dist-packages/deluge/ui/web/images
+      - ~/docker_config/deluge/ui/themes:/usr/lib/python3/dist-packages/deluge/ui/web/themes
+```
+
+&nbsp;&nbsp;&nbsp;Continue to [Step 3](#post-install)
+
+### Install Option 2
+2) Install theme directly into the container.
+
+&nbsp;&nbsp;&nbsp;2a) Find the deluge docker install path:
 ```
 sudo find / -type d -name 'web'
 ```
-  Example: `/var/lib/docker/overlay2/<NUMBER>/diff/usr/lib/python3/dist-packages/deluge/ui/web`
+&nbsp;&nbsp;&nbsp;Example: `/var/lib/docker/overlay2/<NUMBER>/diff/usr/lib/python3/dist-packages/deluge/ui/web`
 
-3) Install the theme. Replace `<PATH>` in the install command with the path found previously which contains `diff` and ends with `/ui/web`
+&nbsp;&nbsp;&nbsp;2b) Install the theme. Replace `<PATH>` in the install command with the path found previously which contains `diff` and ends with `/ui/web`
 ```
 sudo wget -c https://github.com/joelacus/deluge-web-dark-theme/raw/main/deluge_web_dark_theme.tar.gz -O - | sudo tar -xz -C <PATH>
 ```
 
-4) Edit web.conf to set the theme. Scroll to the bottom and change `"theme": "gray"` to `"theme": "dark"`
-```
-sudo nano /path/to/deluge/config/web.conf
-```
-  If the web.conf file is not there, search for it with `sudo find / -type f -name 'web.conf'`
+#### Post Install
 
-5) Edit `index.html`. Replace `<PATH>` with the path used in step 3:
+3) Edit web.conf to set the theme. Replace `<PATH>` with the path to your deluge config defined in `docker-compose.yml` or `docker run` command:
+```
+sudo nano <PATH>/web.conf
+```
+&nbsp;&nbsp;&nbsp;Note: You can also search for it with `sudo find / -type f -name 'web.conf'`
+  
+&nbsp;&nbsp;&nbsp;Scroll to the bottom and change `"theme": "gray"` to `"theme": "dark"`
+
+&nbsp;&nbsp;&nbsp;4a) Find the deluge docker install path:
+```
+sudo find / -type d -name 'web'
+```
+&nbsp;&nbsp;&nbsp;Example: `/var/lib/docker/overlay2/<NUMBER>/diff/usr/lib/python3/dist-packages/deluge/ui/web`
+
+&nbsp;&nbsp;&nbsp;4b) Edit `index.html`. Replace `<PATH>` with path found in Step 4a.
 ```
 sudo nano <PATH>/index.html
 ```
-  and add the following meta tag on the empty line 19 in the header:
+&nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header:
 ```
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 ```
- This prevents scaling issues on mobile devices.
+&nbsp;&nbsp;&nbsp;This prevents scaling issues on mobile devices.
  
-6) Restart the deluge docker container:
+5) Restart the deluge docker container:
 ```
 sudo docker start <Container ID>
 ```
+&nbsp;&nbsp;&nbsp;If you are using [compose](https://docs.linuxserver.io/general/docker-compose), use this command:
+```
+docker-compose up -d
+```
 
-7) (optional) You can change the accent colour by editing this file. Replace `<PATH>` with the path used in step 3:
+6) (optional) You can change the accent colour by editing this file. Replace `<PATH>` with the path found in step 4a:
 ```
 sudo nano <PATH>/themes/css/xtheme-dark.css
 ```
-  Replace the values in the line `--accent: 156,39,176;` with any RGB value.
+&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.
 
-8) Enjoy! :)
+7) Enjoy! :)
+
+<br />
+<br />
 
 ## Deluge TrueNAS
 Tested with TrueNAS Core TrueNAS-12.0-U6.1 Community Deluge Plugin based on 12.2-RELEASE-p11
@@ -189,11 +252,11 @@ sed -i '' -e "s/gray/dark/" ~deluge/.config/deluge/web.conf
 ```
 nano /usr/local/lib/python3.8/site-packages/deluge/ui/web/index.html
 ```
-  and add the following meta tag on the empty line 19 in the header:
+&nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header:
 ```
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 ```
- This prevents scaling issues on mobile devices.
+&nbsp;&nbsp;&nbsp;This prevents scaling issues on mobile devices.
 
 7) Restart deluge-web
 ```
@@ -204,6 +267,6 @@ service deluge_web start
 ```
 nano /usr/local/lib/python3.8/site-packages/deluge/ui/web/themes/css/xtheme-dark.css
 ```
-  Replace the values in the line `--accent: 156,39,176;` with any RGB value.
+&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.
 
 9) Enjoy! :)
