@@ -184,6 +184,8 @@ sudo nano <PATH>/web.conf
   
 &nbsp;&nbsp;&nbsp;Scroll to the bottom and change `"theme": "gray"` to `"theme": "dark"`
 
+&nbsp;&nbsp;&nbsp;If a file called `web.conf~` exists, delete it. This will overwrite web.conf when deluge-web is restarted.
+
 &nbsp;&nbsp;&nbsp;4a) Find the deluge docker install path:
 ```
 sudo find / -type d -name 'web'
