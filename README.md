@@ -3,7 +3,7 @@ A modern dark theme for Deluge Web UI with custom accent colours and updated ico
 
 Automatically uses an optimised view for mobile devices with small screens.
 
-Works with [Deluge 2](#deluge-2), [Deluge 1.3](#deluge-1), [Docker](#deluge-docker), and [TrueNAS](#deluge-truenas).
+Works with [Deluge 2](#deluge-2), [Deluge 1.3](#deluge-1), [Docker](#deluge-docker), [TrueNAS](#deluge-truenas), and [Windows](#windows).
 
 ![Alt text](screenshot.png?raw=true "Optional Title")
 
@@ -58,7 +58,7 @@ sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/themes/css/xtheme-dark.cs
 ```
 &nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.
 
-8) Enjoy! :)
+8) Enjoy! :) [tip](https://ko-fi.com/joelacus)
 
 <br />
 <br />
@@ -111,7 +111,7 @@ sudo nano /usr/lib/python2.7/dist-packages/deluge/ui/web/themes/css/xtheme-dark.
 ```
 &nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.
 
-8) Enjoy! :)
+8) Enjoy! :) [tip](https://ko-fi.com/joelacus)
 
 <br />
 <br />
@@ -217,7 +217,7 @@ sudo nano <PATH>/themes/css/xtheme-dark.css
 ```
 &nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.
 
-7) Enjoy! :)
+7) Enjoy! :) [tip](https://ko-fi.com/joelacus)
 
 <br />
 <br />
@@ -271,4 +271,39 @@ nano /usr/local/lib/python3.8/site-packages/deluge/ui/web/themes/css/xtheme-dark
 ```
 &nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.
 
-9) Enjoy! :)
+9) Enjoy! :) [tip](https://ko-fi.com/joelacus)
+
+<br />
+<br />
+
+## Windows
+
+1) Quit Deluge.
+
+2) Download [deluge_web_dark_theme.zip](https://github.com/joelacus/deluge-web-dark-theme/raw/main/deluge_web_dark_theme.zip)
+
+3) Extract the files from the zip into this folder `C:\Program Files\Deluge\deluge\ui\web` and click replace existing files when prompted.
+
+4) Edit `web.conf` with Notepad.
+```
+C:\Users\<your user name>\AppData\Roaming\deluge\web.conf
+```
+&nbsp;&nbsp;&nbsp;At the bottom of the file, edit `"theme": "gray"` to `"theme": "dark"`
+
+5) Edit `index.html` with Notepad.
+```
+C:\Program Files\Deluge\deluge\ui\web\index.html
+```
+&nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header:
+```
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+```
+&nbsp;&nbsp;&nbsp;This prevents scaling issues on mobile devices.
+
+6) (optional) You can change the accent colour by editing this file with Notepad:
+```
+C:\Program Files\Deluge\deluge\ui\web\themes\css\xtheme-dark.css
+```
+&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.
+
+7) Enjoy! :) [tip](https://ko-fi.com/joelacus)
