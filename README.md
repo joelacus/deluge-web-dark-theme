@@ -56,7 +56,8 @@ deluge-web
 ```
 sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/themes/css/xtheme-dark.css
 ```
-&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.
+&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.<br>
+&nbsp;&nbsp;&nbsp;Note: If you don't see the updated accent colour, force reload the deluge web-ui page with `Ctrl+Shift+R`.
 
 8) Enjoy! :) [tip](https://ko-fi.com/joelacus)
 
@@ -109,7 +110,8 @@ deluge-web
 ```
 sudo nano /usr/lib/python2.7/dist-packages/deluge/ui/web/themes/css/xtheme-dark.css
 ```
-&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.
+&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.<br>
+&nbsp;&nbsp;&nbsp;Note: If you don't see the updated accent colour, force reload the deluge web-ui page with `Ctrl+Shift+R`.
 
 8) Enjoy! :) [tip](https://ko-fi.com/joelacus)
 
@@ -215,7 +217,8 @@ docker-compose up -d
 ```
 sudo nano <PATH>/themes/css/xtheme-dark.css
 ```
-&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.
+&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.<br>
+&nbsp;&nbsp;&nbsp;Note: If you don't see the updated accent colour, force reload the deluge web-ui page with `Ctrl+Shift+R`.
 
 7) Enjoy! :) [tip](https://ko-fi.com/joelacus)
 
@@ -269,7 +272,8 @@ service deluge_web start
 ```
 nano /usr/local/lib/python3.8/site-packages/deluge/ui/web/themes/css/xtheme-dark.css
 ```
-&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.
+&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.<br>
+&nbsp;&nbsp;&nbsp;Note: If you don't see the updated accent colour, force reload the deluge web-ui page with `Ctrl+Shift+R`.
 
 9) Enjoy! :) [tip](https://ko-fi.com/joelacus)
 
@@ -302,11 +306,12 @@ C:\Program Files\Deluge\deluge\ui\web\
 ```
 &nbsp;&nbsp;&nbsp;This prevents scaling issues on mobile devices.
 
-6) (optional) You can change the accent colour by editing this file with Notepad (as Admin):<br>
+6) (optional) You can change the accent colour by editing `xtheme-dark.css` with Notepad (as Admin):<br>
 (Change "Text Documents (.txt)" to "All Files" in the Open dialogue).
 ```
-C:\Program Files\Deluge\deluge\ui\web\themes\css\xtheme-dark.css
+C:\Program Files\Deluge\deluge\ui\web\themes\css\
 ```
-&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.
+&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.<br>
+&nbsp;&nbsp;&nbsp;Note: If you don't see the updated accent colour, force reload the deluge web-ui page with `Ctrl+Shift+R`.
 
 7) Enjoy! :) [tip](https://ko-fi.com/joelacus)
