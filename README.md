@@ -284,15 +284,17 @@ nano /usr/local/lib/python3.8/site-packages/deluge/ui/web/themes/css/xtheme-dark
 
 3) Extract the files from the zip into this folder `C:\Program Files\Deluge\deluge\ui\web` and click replace existing files when prompted.
 
-4) Edit `web.conf` with Notepad.
+4) Edit `web.conf` with Notepad in this folder:<br>
+(Change "Text Documents (.txt)" to "All Files" in the Open dialogue).
 ```
-C:\Users\<your user name>\AppData\Roaming\deluge\web.conf
+C:\Users\<your user name>\AppData\Roaming\deluge
 ```
 &nbsp;&nbsp;&nbsp;At the bottom of the file, edit `"theme": "gray"` to `"theme": "dark"`
 
-5) Edit `index.html` with Notepad.
+5) Open Notepad as Admin and edit `index.html` in this folder:<br>
+(Change "Text Documents (.txt)" to "All Files" in the Open dialogue).
 ```
-C:\Program Files\Deluge\deluge\ui\web\index.html
+C:\Program Files\Deluge\deluge\ui\web\
 ```
 &nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header:
 ```
@@ -300,7 +302,8 @@ C:\Program Files\Deluge\deluge\ui\web\index.html
 ```
 &nbsp;&nbsp;&nbsp;This prevents scaling issues on mobile devices.
 
-6) (optional) You can change the accent colour by editing this file with Notepad:
+6) (optional) You can change the accent colour by editing this file with Notepad (as Admin):<br>
+(Change "Text Documents (.txt)" to "All Files" in the Open dialogue).
 ```
 C:\Program Files\Deluge\deluge\ui\web\themes\css\xtheme-dark.css
 ```
