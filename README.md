@@ -34,7 +34,7 @@ nano ~/.config/deluge/web.conf
 sudo nano /var/lib/deluge/.config/deluge/web.conf
 ```
 
-&nbsp;&nbsp;&nbsp;If a file called `web.conf~` exists, delete it. This will overwrite web.conf when deluge-web is restarted.
+&nbsp;&nbsp;&nbsp;If a file called `web.conf~` exists, delete, or edit it as well. Otherwise this will overwrite web.conf when deluge-web is restarted.
 
 5) Edit `index.html` 
 ```
@@ -89,7 +89,7 @@ nano ~/.config/deluge/web.conf
 sudo nano /var/lib/deluge/.config/deluge/web.conf
 ```
 
-&nbsp;&nbsp;&nbsp;If a file called `web.conf~` exists, delete it. This will overwrite web.conf when deluge-web is restarted.
+&nbsp;&nbsp;&nbsp;If a file called `web.conf~` exists, delete, or edit it as well. Otherwise this will overwrite web.conf when deluge-web is restarted.
 
 5) Edit `index.html` 
 ```
@@ -186,7 +186,7 @@ sudo nano <PATH>/web.conf
   
 &nbsp;&nbsp;&nbsp;Scroll to the bottom and change `"theme": "gray"` to `"theme": "dark"`
 
-&nbsp;&nbsp;&nbsp;If a file called `web.conf~` exists, delete it. This will overwrite web.conf when deluge-web is restarted.
+&nbsp;&nbsp;&nbsp;If a file called `web.conf~` exists, delete, or edit it as well. Otherwise this will overwrite web.conf when deluge-web is restarted.
 
 &nbsp;&nbsp;&nbsp;4a) Find the deluge docker install path:
 ```
@@ -294,6 +294,12 @@ nano /usr/local/lib/python3.8/site-packages/deluge/ui/web/themes/css/xtheme-dark
 C:\Users\<your user name>\AppData\Roaming\deluge
 ```
 &nbsp;&nbsp;&nbsp;At the bottom of the file, edit `"theme": "gray"` to `"theme": "dark"`
+
+&nbsp;&nbsp;&nbsp;If you run the [deluge daemon via nssm](https://deluge.readthedocs.io/en/latest/how-to/nssm-service.html), you will also need to edit an additional web.conf file here:
+```
+C:\config_location
+```
+&nbsp;&nbsp;&nbsp;If a file called `web.conf.bak` exists in either location, delete, or edit it as well. Otherwise this will overwrite web.conf when deluge-web is restarted.
 
 5) Open Notepad as Admin and edit `index.html` in this folder:<br>
 (Change "Text Documents (.txt)" to "All Files" in the Open dialogue).
