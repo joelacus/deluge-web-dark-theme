@@ -1,0 +1,24 @@
+services:
+  deluge:
+    image: lscr.io/linuxserver/deluge:latest
+    container_name: deluge
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago # Set to your desired timezone
+      - DELUGE_LOGLEVEL=error
+    volumes:
+     # Copy your deluge config from the container if using jackett/sonarr etc
+     # - /home/crusty/docker_config/web.conf:/config/web.conf
+     # - /home/crusty/external_drives/hgst10-0/torrents/incomplete:/downloads/incomplete
+     # - /home/crusty/external_drives/hgst10-0/torrents/complete:/downloads/complete
+     # - /home/crusty/external_drives/hgst10-0/torrents/torrent_files:/downloads/torrent_files
+      - /home/$USER/docker_config/deluge/ui/icons:/usr/lib/python3.11/site-packages/deluge/ui/web/icons
+      - /home/$USER/docker_config/deluge/ui/images:/usr/lib/python3.11/site-packages/deluge/ui/web/images
+      - /home/$USER/docker_config/deluge/ui/themes:/usr/lib/python3.11/site-packages/deluge/ui/web/themes
+    ports:
+      - 8112:8112
+      - 6881:6881
+      - 6881:6881/udp
+    restart: unless-stopped
+networks: {}
