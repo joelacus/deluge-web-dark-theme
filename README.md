@@ -159,6 +159,7 @@ deluge:
       - ~/docker_config/deluge/ui/images:/usr/lib/python3/dist-packages/deluge/ui/web/images
       - ~/docker_config/deluge/ui/themes:/usr/lib/python3/dist-packages/deluge/ui/web/themes
 ```
+&nbsp;&nbsp;&nbsp;See `compose-example.yml` for a full file example.
 
 &nbsp;&nbsp;&nbsp;Continue to [Step 3](#post-install)
 
