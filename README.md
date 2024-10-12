@@ -1,6 +1,8 @@
 # Deluge Web UI Dark Theme + Responsive Mobile UI
 A modern dark theme for Deluge Web UI with custom accent colours and updated icons.
 
+Different coloured rows depending on the torrent state. (Colours can be customised or disabled).
+
 Automatically uses an optimised view for mobile devices with small screens.
 
 Works with [Deluge 2](#deluge-2), [Deluge 1.3](#deluge-1), [Docker](#deluge-docker), [TrueNAS](#deluge-truenas), and [Windows](#windows).
@@ -19,10 +21,18 @@ pkill deluge-web
 ```
 sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/icons/ /usr/lib/python3/dist-packages/deluge/ui/web/icons.bak & sudo mv /usr/lib/python3/dist-packages/deluge/ui/web/images/ /usr/lib/python3/dist-packages/deluge/ui/web/images.bak
 ```
+&nbsp;&nbsp;&nbsp;Possible alternative location (python version may differ):
+```
+sudo mv /usr/lib/python3.12/site-packages/deluge/ui/web/icons/ /usr/lib/python3.12/site-packages/deluge/ui/web/icons.bak & sudo mv /usr/lib/python3.12/site-packages/deluge/ui/web/images/ /usr/lib/python3.12/site-packages/deluge/ui/web/images.bak
+```
 
 3) Install the theme:
 ```
 sudo wget -c https://github.com/joelacus/deluge-web-dark-theme/raw/main/deluge_web_dark_theme.tar.gz -O - | sudo tar -xz -C /usr/lib/python3/dist-packages/deluge/ui/web/
+```
+&nbsp;&nbsp;&nbsp;Possible alternative location (python version may differ):
+```
+sudo wget -c https://github.com/joelacus/deluge-web-dark-theme/raw/main/deluge_web_dark_theme.tar.gz -O - | sudo tar -xz -C /usr/lib/python3.12/site-packages/deluge/ui/web/
 ```
 
 4) Edit web.conf to set the theme. Scroll to the bottom and change `"theme": "gray"` to `"theme": "dark"`
@@ -40,6 +50,10 @@ sudo nano /var/lib/deluge/.config/deluge/web.conf
 ```
 sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/index.html
 ```
+&nbsp;&nbsp;&nbsp;Possible alternative location (python version may differ):
+```
+sudo nano /usr/lib/python3.12/site-packages/deluge/ui/web/index.html
+```
 &nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header:
 ```
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
@@ -52,11 +66,15 @@ sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/index.html
 deluge-web
 ```
 
-7) (optional) You can change the accent colour by editing this file:
+7) (optional) You can change the accent colour and row colours by editing this file:
 ```
 sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/themes/css/xtheme-dark.css
 ```
-&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.<br>
+&nbsp;&nbsp;&nbsp;Possible alternative location (python version may differ):
+```
+sudo nano /usr/lib/python3.12/site-packages/deluge/ui/web/themes/css/xtheme-dark.css
+```
+&nbsp;&nbsp;&nbsp;Replace the variable values `--accent: 156,39,176;` with any RGB value.<br>
 &nbsp;&nbsp;&nbsp;Note: If you don't see the updated accent colour, force reload the deluge web-ui page with `Ctrl+Shift+R`.
 
 8) Enjoy! :) [tip](https://ko-fi.com/joelacus)
@@ -106,11 +124,11 @@ sudo nano /usr/lib/python2.7/dist-packages/deluge/ui/web/index.html
 deluge-web
 ```
 
-7) (optional) You can change the accent colour by editing this file:
+7) (optional) You can change the accent colour and row colours by editing this file:
 ```
 sudo nano /usr/lib/python2.7/dist-packages/deluge/ui/web/themes/css/xtheme-dark.css
 ```
-&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.<br>
+&nbsp;&nbsp;&nbsp;Replace the variable values `--accent: 156,39,176;` with any RGB value.<br>
 &nbsp;&nbsp;&nbsp;Note: If you don't see the updated accent colour, force reload the deluge web-ui page with `Ctrl+Shift+R`.
 
 8) Enjoy! :) [tip](https://ko-fi.com/joelacus)
@@ -214,11 +232,11 @@ sudo docker start <Container ID>
 docker-compose up -d
 ```
 
-6) (optional) You can change the accent colour by editing this file. Replace `<PATH>` with the path found in step 4a:
+6) (optional) You can change the accent colour and row colours by editing this file. Replace `<PATH>` with the path found in step 4a:
 ```
 sudo nano <PATH>/themes/css/xtheme-dark.css
 ```
-&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.<br>
+&nbsp;&nbsp;&nbsp;Replace the variable values `--accent: 156,39,176;` with any RGB value.<br>
 &nbsp;&nbsp;&nbsp;Note: If you don't see the updated accent colour, force reload the deluge web-ui page with `Ctrl+Shift+R`.
 
 7) Enjoy! :) [tip](https://ko-fi.com/joelacus)
@@ -269,11 +287,11 @@ nano /usr/local/lib/python3.8/site-packages/deluge/ui/web/index.html
 service deluge_web start
 ```
 
-8) (optional) You can change the accent colour by editing this file:
+8) (optional) You can change the accent colour and row colours by editing this file:
 ```
 nano /usr/local/lib/python3.8/site-packages/deluge/ui/web/themes/css/xtheme-dark.css
 ```
-&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.<br>
+&nbsp;&nbsp;&nbsp;Replace the variable values `--accent: 156,39,176;` with any RGB value.<br>
 &nbsp;&nbsp;&nbsp;Note: If you don't see the updated accent colour, force reload the deluge web-ui page with `Ctrl+Shift+R`.
 
 9) Enjoy! :) [tip](https://ko-fi.com/joelacus)
@@ -313,12 +331,12 @@ C:\Program Files\Deluge\deluge\ui\web\
 ```
 &nbsp;&nbsp;&nbsp;This prevents scaling issues on mobile devices.
 
-6) (optional) You can change the accent colour by editing `xtheme-dark.css` with Notepad (as Admin):<br>
+6) (optional) You can change the accent colour and row colours by editing `xtheme-dark.css` with Notepad (as Admin):<br>
 (Change "Text Documents (.txt)" to "All Files" in the Open dialogue).
 ```
 C:\Program Files\Deluge\deluge\ui\web\themes\css\
 ```
-&nbsp;&nbsp;&nbsp;Replace the values in the line `--accent: 156,39,176;` with any RGB value.<br>
+&nbsp;&nbsp;&nbsp;Replace the variable values `--accent: 156,39,176;` with any RGB value.<br>
 &nbsp;&nbsp;&nbsp;Note: If you don't see the updated accent colour, force reload the deluge web-ui page with `Ctrl+Shift+R`.
 
 7) Enjoy! :) [tip](https://ko-fi.com/joelacus)
