@@ -1,0 +1,167 @@
+/*
+	Dark Theme Version 1.7.1 Responsive
+*/
+
+@media (max-width: 640px) {
+	.x-window{
+		position: fixed !important;
+		left: 0 !important;
+		top: 0 !important;
+		width: 100% !important;
+		height: 100% !important;
+	}
+
+	.x-window-body{
+		width: 99% !important;
+	}
+
+	.x-panel-body, .x-panel-body-noheader {
+		overflow: scroll !important;
+	}
+
+	.x-panel-body .x-panel-body-noheader .x-panel-body-noborder .x-form {
+		min-width: 100% !important;
+		overflow: scroll !important;
+	}
+
+	.x-fieldset-bwrap, .x-fieldset-body .x-fieldset-body-noborder {
+		min-width: 300px !important;
+		overflow: scroll !important;
+	}
+
+	.x-panel-bwrap {
+		overflow: scroll !important;
+	}
+
+	.x-fieldset-body {
+		overflow: unset !important;
+	}
+
+	.x-window-tl{
+		display: none !important;
+	}
+
+	.x-btn-text{
+		font-size: 14px !important;
+		height: 35px !important;
+	}
+
+	.xtb-sep{
+		display: none !important;
+	}
+	
+	button.x-deluge-main-panel, .icon-logout, .icon-help {
+		display: none !important;
+	}
+	
+	.icon-up, .icon-down, .icon-error, .x-deluge-main-panel, .icon-add, .icon-remove, .icon-pause, .icon-resume, .icon-up, .icon-down, .icon-logout, .icon-help, .x-deluge-connection-manager, .x-deluge-preferences, .icon-logout {
+		font-size: 0 !important;
+		height: 35px !important;
+		width: 35px !important;
+		background-size: cover !important;
+		background-repeat: no-repeat !important;		
+	}
+	
+	.x-layout-collapsed-south{
+		height: 25px !important;
+	}
+
+	.x-tool-collapse-south {
+		position: absolute !important;
+	}
+	
+	.deluge-sidebar{
+		width: 99% !important;
+	}
+
+	.x-toolbar-ct {
+		overflow-x: scroll !important;
+	}
+
+	.x-toolbar-left-row {
+		display: block !important;
+		width: 0px !important;
+	}
+
+	.x-toolbar-layout-ct {
+		overflow-x: scroll !important;
+	}
+	
+	.x-grid3-row {
+		padding: 10px 0 10px 0;
+	}
+
+	.x-grid3-cell-inner, .x-grid3-hd-inner {
+		font-size: 18px;
+	}
+
+	.ul.x-tab-strip li {
+		margin-left: 0 !important;
+	}
+
+	.x-tab-strip-top .x-tab-left {
+		padding-right: 0 !important;
+	}
+
+	.x-grid3-td-queue {
+		width:28px !important;
+	}
+
+	.x-grid3-td-name, .x-grid3-hd-name{
+		width: 400px !important;
+	}
+
+	.x-grid3-td-2 {
+		width: 110px !important;
+	}
+	
+	.x-grid3-td-6 {
+		width: 130px !important;
+	}
+	
+	.x-grid3-td-7 {
+		width: 130px !important;
+	}
+	
+	.x-grid3-td-8 {
+		width: 100px !important;
+	}
+
+	.x-window-footer .x-toolbar-layout-ct .x-toolbar-ct .x-toolbar-right {
+		left:0;
+		position: fixed;
+		background-color: #1c1c1c;
+		width: 100%;
+	}
+	#fileUploadForm {
+		margin-top: -2px;
+		margin-left: -16px;
+	}
+	.x-plain-bwrap .x-form {
+		height: 45px;
+	}
+	.x-form-file-wrap .x-form-file {
+		height: 45px !important;
+	}
+	.x-window-mc {
+		font-size: 16px !important;
+	}
+	.x-fieldset-bwrap .x-fieldset-body.x-table-layout-ct {
+	    width: 100% !important;
+	}
+	.x-column-inner .x-panel.x-panel-noborder.x-column {
+		width: 100% !important;
+	}
+	.x-column-inner .x-panel.x-panel-noborder.x-column .x-panel-body.x-panel-body-noheader.x-panel-body-noborder {
+		width: 310px !important;
+	}
+	.x-column-inner .x-fieldset.x-column {
+		height: 140px !important;
+	}
+}
+
+@media (max-width: 360px) {
+	.x-deluge-main-panel, .icon-help{
+		display:none !important;
+	}	
+}

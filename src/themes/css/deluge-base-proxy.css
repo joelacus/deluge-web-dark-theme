@@ -1,0 +1,578 @@
+html,
+body {
+	font: normal 11px arial, tahoma, helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+	overflow: hidden;
+	height: 100%;
+	color: black;
+	background: white;
+}
+
+input {
+	color: Black;
+}
+
+/* remove dotted line on buttons in Firefox */
+button::-moz-focus-inner {
+	border: 0;
+}
+
+.x-deluge-main-panel {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/deluge.png') !important;
+}
+
+.x-deluge-logo {
+	background-image: url('../ui_images/deluge-about.png');
+}
+
+#tbar-deluge-text * {
+	color: black !important;
+	font-weight: bold;
+}
+
+#tbar-deluge-text {
+	opacity: 1 !important;
+}
+
+.deluge-torrents td,
+.x-deluge-peers td {
+	height: 16px;
+	line-height: 16px;
+}
+
+.deluge-torrents .torrent-name,
+.x-deluge-peer,
+.x-deluge-seed {
+	padding-left: 20px;
+	background-repeat: no-repeat;
+}
+
+.deluge-torrents .deluge-torrent-progress {
+	text-align: center;
+}
+
+/* Icon classes */
+.x-deluge-all {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/all.png') !important;
+}
+.x-deluge-active {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/active.png') !important;
+}
+.x-deluge-downloading,
+.x-btn .x-deluge-downloading,
+.x-deluge-peer {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/downloading.png') !important;
+}
+.x-deluge-seeding,
+.x-btn .x-deluge-seeding,
+.deluge-torrents .seeding,
+.x-deluge-seed {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/seeding.png') !important;
+}
+.x-deluge-queued,
+.x-btn .x-deluge-queued,
+.deluge-torrents .queued {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/queued.png') !important;
+}
+.x-deluge-paused,
+.x-btn .x-deluge-paused,
+.deluge-torrents .paused {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/inactive.png') !important;
+}
+.x-deluge-error,
+.deluge-torrents .error {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/alert.png') !important;
+}
+.x-deluge-checking,
+.deluge-torrents .checking {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/checking.png') !important;
+}
+.x-deluge-dht,
+.x-btn .x-deluge-dht {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/dht.png') !important;
+}
+.x-deluge-preferences,
+.x-btn .x-deluge-preferences {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/preferences.png') !important;
+}
+.x-deluge-connections,
+.x-btn .x-deluge-connections {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/connections.png') !important;
+}
+.x-deluge-connection-manager,
+.x-btn .x-deluge-connection-manager {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/connection_manager.png') !important;
+}
+.x-deluge-traffic,
+.x-btn .x-deluge-traffic {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/traffic.png') !important;
+}
+.x-deluge-edit-trackers,
+.x-btn .x-deluge-edit-trackers {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/edit_trackers.png') !important;
+}
+.x-deluge-freespace,
+.x-btn .x-deluge-freespace {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/drive.png') !important;
+}
+
+.x-deluge-install-plugin,
+.x-btn .x-deluge-install-plugin {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/install_plugin.png') !important;
+}
+.x-deluge-find-more,
+.x-btn .x-deluge-find-more {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/find_more.png') !important;
+}
+
+/* Torrent Details */
+#torrentDetails dl,
+#torrentDetails dl.singleline {
+	float: left;
+	min-height: 120px;
+}
+
+#torrentDetails dl dt,
+dl.singleline dt {
+	float: left;
+	font-weight: bold;
+	height: 19px;
+}
+
+#torrentDetails dl dd,
+dl.singleline dd {
+	margin-left: 100px;
+	width: 140px;
+	height: 19px;
+}
+
+dl.singleline {
+	float: left;
+}
+
+dl.singleline dt {
+	width: 80px;
+}
+
+dl.singleline dd {
+	margin-left: 85px;
+	width: auto;
+}
+
+.x-deluge-plugins {
+	background: White;
+}
+
+/* Torrent Details - Status Tab */
+.x-deluge-status-progressbar {
+	margin: 5px;
+}
+
+.x-deluge-status {
+	margin: 10px;
+}
+
+.x-deluge-status dd.downloaded,
+.x-deluge-status dd.uploaded,
+.x-deluge-status dd.share,
+.x-deluge-status dd.announce,
+.x-deluge-status dd.tracker_status {
+	width: 200px;
+	margin-left: 100px;
+}
+
+.x-deluge-status dd.downspeed,
+.x-deluge-status dd.upspeed,
+.x-deluge-status dd.eta,
+.x-deluge-status dd.pieces {
+	margin-left: 100px;
+}
+
+.x-deluge-status dd.active_time,
+.x-deluge-status dd.seeding_time,
+.x-deluge-status dd.seed_rank,
+.x-deluge-status dd.time_added {
+	width: 100px;
+}
+.x-deluge-status dd.last_seen_complete {
+	width: 100px;
+}
+
+/* Torrent Details - Details Tab */
+#torrentDetails dd.torrent_name,
+#torrentDetails dd.status,
+#torrentDetails dd.tracker,
+#torrentDetails dd.path,
+#torrentDetails dd.comment {
+	width: auto;
+}
+
+.detailsPanel .x-panel-header {
+	height: 0;
+	padding: 0;
+	border: 0;
+}
+
+.detailsPanel .x-tool {
+	height: 15px;
+	z-index: 1;
+	position: fixed;
+	right: 0;
+	margin: 5px 10px;
+}
+
+/* Login Window */
+.x-deluge-login-window-icon {
+	background: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/login.png') no-repeat 2px !important;
+}
+
+/* Remove Window */
+.x-deluge-remove-window-icon {
+	background: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/remove.png') no-repeat 2px !important;
+}
+
+/* Add Window */
+.x-deluge-add-window-icon {
+	background: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/add.png') no-repeat 2px !important;
+}
+
+.x-deluge-add-torrent-name {
+	line-height: 20px;
+}
+
+.x-deluge-add-torrent-name-loading {
+	padding-left: 20px;
+	line-height: 20px;
+	background: url('/themes/default/tree/loading.gif') no-repeat 2px;
+}
+
+/* Add Url Window */
+.x-deluge-add-file,
+.x-btn .x-deluge-add-file {
+	background: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/add_file.png') no-repeat 2px !important;
+}
+
+.x-deluge-add-url-window-icon {
+	background: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/add_url.png') no-repeat 2px !important;
+}
+
+/* Connect Window */
+.x-deluge-connect-window-icon {
+	background: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/connection_manager.png') no-repeat 2px !important;
+}
+
+/* Statusbar */
+.x-deluge-statusbar {
+	background: no-repeat 2px !important;
+	padding-left: 20px !important;
+}
+
+.x-not-connected {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/error.png') !important;
+}
+
+.x-connected {
+	background-image: none !important;
+}
+
+/* Styles for renderered progress bars */
+.x-progress-renderered .x-progress-bar {
+	height: 16px;
+}
+
+.x-progress-renderered .x-progress-bar .x-progress-text {
+	margin-top: -1px;
+	height: 18px;
+}
+
+/* Adjust progressbar for torrent files tree */
+.x-tree .x-progress-wrap {
+	width: 100px;
+}
+
+.x-tree .x-progress-renderered .x-progress-inner {
+	height: 12px;
+}
+
+.x-tree .x-progress-renderered .x-progress-bar {
+	height: 12px;
+}
+
+.x-tree .x-progress-renderered .x-progress-text {
+	vertical-align: top;
+	height: 12px;
+	font-size: 11px;
+	font-weight: normal;
+	padding: 0px;
+	margin-top: 0px;
+}
+
+.x-tree .x-progress-renderered .x-progress-bar .x-progress-text {
+	margin-top: 0px;
+}
+
+/* Files TreeGrid */
+.x-treegrid-root-table {
+	border-right: 1px solid;
+}
+
+.x-treegrid-root-node {
+	overflow: auto;
+}
+
+.x-treegrid-hd-hidden {
+	visibility: hidden;
+	border: 0;
+	width: 0;
+}
+
+.x-treegrid-col {
+	border-bottom: 1px solid;
+	height: 20px;
+	overflow: hidden;
+	vertical-align: top;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.x-treegrid-text {
+	padding-left: 4px;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+}
+
+.x-treegrid-resizer {
+	border-left: 1px solid;
+	border-right: 1px solid;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.x-treegrid-header-inner {
+	overflow: hidden;
+}
+
+.x-treegrid-root-table,
+.x-treegrid-col {
+	border-color: #ededed;
+}
+
+.x-treegrid-resizer {
+	border-left-color: #555;
+	border-right-color: #555;
+}
+
+/* Options Tab Styles */
+.x-deluge-options-label {
+	margin-right: 10px;
+}
+
+.x-deluge-indent-checkbox {
+	padding-left: 10px;
+}
+
+/* Sidebar styles */
+#sidebar .x-grid3-col-filter {
+	height: 16px;
+	line-height: 16px;
+	padding: 2px;
+	cursor: pointer;
+}
+
+#sidebar .x-deluge-filter {
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: left;
+	padding-left: 20px;
+	line-height: 16px;
+}
+
+#sidebar .x-list-selected em {
+	font-weight: bold;
+}
+
+/* MessageBox icon styles */
+.x-deluge-icon-warning {
+	background: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/warning.png') no-repeat 2px !important;
+}
+
+.x-deluge-icon-error {
+	background: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/error.png') no-repeat 2px !important;
+}
+
+.x-tree-node-leaf .x-deluge-file {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/document.png') !important;
+}
+
+.x-deluge-add-file-checkbox {
+	margin-top: 2px;
+}
+
+/* Filepriority styles */
+.x-no-download,
+.x-low-download,
+.x-normal-download,
+.x-high-download,
+.x-mixed-download {
+	padding-left: 20px;
+	background-repeat: no-repeat;
+	line-height: 16px;
+}
+
+.x-no-download {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/no_download.png') !important;
+}
+
+.x-low-download {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/low.png') !important;
+}
+
+.x-normal-download {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/normal.png') !important;
+}
+
+.x-high-download {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/high.png') !important;
+}
+
+.x-mixed-download {
+	/*background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/mixed.png) !important;*/
+}
+
+/**
+ * Deluge Default Icon Set
+ * n.b. this needs to be forked out at some point
+ */
+
+.icon-create {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/create.png') !important;
+}
+
+.icon-add {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/add.png') !important;
+}
+
+.icon-add-url {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/add_url.png') !important;
+}
+
+.icon-magnet-add {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/magnet_add.png') !important;
+}
+
+.icon-magnet-copy {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/magnet_copy.png') !important;
+}
+
+.icon-magnet {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/magnet.png') !important;
+}
+
+.icon-pause {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/pause.png') !important;
+}
+
+.icon-resume {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/start.png') !important;
+}
+
+.icon-options {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/preferences.png') !important;
+}
+
+.icon-queue {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/queue.png') !important;
+}
+
+.icon-top {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/top.png') !important;
+}
+
+.icon-up {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/up.png') !important;
+}
+
+.icon-down {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/down.png') !important;
+}
+
+.icon-bottom {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/bottom.png') !important;
+}
+
+.icon-update-tracker {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/update.png') !important;
+}
+
+.icon-edit-trackers,
+.icon-edit {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/edit_trackers.png') !important;
+}
+
+.icon-remove {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/remove.png') !important;
+}
+
+.icon-recheck {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/recheck.png') !important;
+}
+
+.icon-move {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/move.png') !important;
+}
+
+.icon-help {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/help.png') !important;
+}
+
+.icon-logout {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/logout.png') !important;
+}
+
+.icon-back {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/back.png') !important;
+}
+
+.icon-forward {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/forward.png') !important;
+}
+
+.icon-home {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/home.png') !important;
+}
+
+.icon-ok {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/ok.png') !important;
+}
+
+.icon-error {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/error.png') !important;
+}
+
+.icon-upload-slots {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/upload_slots.png') !important;
+}
+
+.icon-expand-all {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/expand_all.png') !important;
+}
+
+.icon-do-not-download {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/no_download.png') !important;
+}
+
+.icon-low {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/low.png') !important;
+}
+
+.icon-normal {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/normal.png') !important;
+}
+
+.icon-high {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/high.png') !important;
+}
