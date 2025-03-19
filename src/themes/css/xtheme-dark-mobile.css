@@ -1,5 +1,5 @@
 /*
-	Deluge Dark Theme 
+    Deluge Dark Theme 
     Version: 1.9.0 (Responsive)
     Author: github.com/joelacus
 */
@@ -207,12 +207,5 @@
 		grid-template-columns: 500px 100px;
 		width: 100%;
 		overflow-x: auto;
-	}
-}
-
-@media (max-width: 360px) {
-	.x-deluge-main-panel,
-	.icon-help {
-		display: none !important;
 	}
 }

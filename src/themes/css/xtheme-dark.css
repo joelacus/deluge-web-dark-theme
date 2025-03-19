@@ -7,8 +7,8 @@
  */
 
 /*  
-	Deluge Dark Theme
-	Version: 1.9.0
+    Deluge Dark Theme
+    Version: 1.9.0
     Author: github.com/joelacus
 
     Accent Colour Presets:
@@ -2262,9 +2262,10 @@ dl.singleline dd {
 }
 
 #btn-simulate-right-click .icon-menu {
+	width: 16px;
 	background-image: url(../../icons/menu.png) !important;
 	background-repeat: no-repeat;
-	background-size: 16px;
+	background-size: 14px;
 	background-position: left;
 }
 
