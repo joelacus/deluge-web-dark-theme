@@ -9,7 +9,7 @@
 
 /*  
     Deluge Dark Theme
-    Version: 1.9.0 (Proxy)
+    Version: 1.9.1 (Proxy)
     Author: github.com/joelacus
 
     Accent Colour Presets:
@@ -2181,7 +2181,8 @@ dl.singleline dd {
 .x-deluge-login-window-icon,
 .x-deluge-add-window-icon,
 .x-deluge-add-url-window-icon,
-.x-deluge-icon-error {
+.x-deluge-icon-error,
+.x-deluge-remove-window-icon {
 	background-size: 16px !important;
 }
 .x-toolbar-cell .x-not-connected {
@@ -2329,4 +2330,8 @@ dl.singleline dd {
 
 .x-btn button {
 	color: var(--text);
+}
+
+.x-deluge-statusbar.x-connected {
+	visibility: hidden;
 }
