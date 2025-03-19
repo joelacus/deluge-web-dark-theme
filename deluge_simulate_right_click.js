@@ -5,10 +5,8 @@
 if (!document.getElementById('#btn-simulate-right-click')) {
 	// Create "open menu" button
 	const button = document.createElement('button');
-	button.textContent = 'Open Selected Row Menu';
-	button.id = '#btn-simulate-right-click';
+	button.id = 'btn-simulate-right-click';
 	button.classList.add('x-btn');
-	button.setAttribute('style', 'color: #fff;padding: 6px;font-size: 12px;');
 	button.addEventListener('click', function (e) {
 		const element = document.querySelector('.x-grid3-row-selected');
 		if (!element) return;
@@ -21,17 +19,23 @@ if (!document.getElementById('#btn-simulate-right-click')) {
 		document.querySelector('.x-shadow').style.left = x;
 		document.querySelector('.x-shadow').style.top = y;
 	});
+	const icon = document.createElement('div');
+	icon.classList.add('icon-menu');
+	button.append(icon);
+	const span = document.createElement('span');
+	span.textContent = 'Open Selected Row Menu';
+	button.append(span);
 	// Append the button to the top toolbar
 	setTimeout(() => {
 		document.querySelector('.x-toolbar-left-row')?.append(button);
 	}, 1000);
 	// Ensure the button is loaded
 	setTimeout(() => {
-		if (document.getElementById('#btn-simulate-right-click')) return;
+		if (document.querySelector('#btn-simulate-right-click')) return;
 		document.querySelector('.x-toolbar-left-row')?.append(button);
 	}, 5000);
 	setTimeout(() => {
-		if (document.getElementById('#btn-simulate-right-click')) return;
+		if (document.querySelector('#btn-simulate-right-click')) return;
 		document.querySelector('.x-toolbar-left-row')?.append(button);
 	}, 10000);
 }
