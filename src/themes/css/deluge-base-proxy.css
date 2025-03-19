@@ -1,3 +1,9 @@
+/*
+	Deluge Dark Theme 
+    Version: 1.9.0 (Base Proxy)
+    Author: github.com/joelacus
+*/
+
 /*html,
 body {
 	font: normal 11px arial, tahoma, helvetica, sans-serif;
@@ -20,7 +26,7 @@ button::-moz-focus-inner {
 }*/
 
 .x-deluge-main-panel {
-	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/deluge.png') !important;
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/deluge-192.png') !important;
 }
 
 /*.x-deluge-logo {

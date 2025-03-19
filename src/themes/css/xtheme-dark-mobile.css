@@ -1,9 +1,11 @@
 /*
-	Dark Theme Version 1.7.1 Responsive
+	Deluge Dark Theme 
+    Version: 1.9.0 (Responsive)
+    Author: github.com/joelacus
 */
 
 @media (max-width: 640px) {
-	.x-window{
+	.x-window {
 		position: fixed !important;
 		left: 0 !important;
 		top: 0 !important;
@@ -11,11 +13,12 @@
 		height: 100% !important;
 	}
 
-	.x-window-body{
+	.x-window-body {
 		width: 99% !important;
 	}
 
-	.x-panel-body, .x-panel-body-noheader {
+	.x-panel-body,
+	.x-panel-body-noheader {
 		overflow: scroll !important;
 	}
 
@@ -24,7 +27,8 @@
 		overflow: scroll !important;
 	}
 
-	.x-fieldset-bwrap, .x-fieldset-body .x-fieldset-body-noborder {
+	.x-fieldset-bwrap,
+	.x-fieldset-body .x-fieldset-body-noborder {
 		min-width: 300px !important;
 		overflow: scroll !important;
 	}
@@ -37,40 +41,63 @@
 		overflow: unset !important;
 	}
 
-	.x-window-tl{
+	.x-window-tl {
 		display: none !important;
 	}
 
-	.x-btn-text{
+	.x-btn-text {
 		font-size: 14px !important;
 		height: 35px !important;
 	}
 
-	.xtb-sep{
+	.xtb-sep {
 		display: none !important;
 	}
-	
-	button.x-deluge-main-panel, .icon-logout, .icon-help {
-		display: none !important;
-	}
-	
-	.icon-up, .icon-down, .icon-error, .x-deluge-main-panel, .icon-add, .icon-remove, .icon-pause, .icon-resume, .icon-up, .icon-down, .icon-logout, .icon-help, .x-deluge-connection-manager, .x-deluge-preferences, .icon-logout {
+
+	.icon-up,
+	.icon-down,
+	.icon-error,
+	.x-deluge-main-panel,
+	.icon-add,
+	.icon-remove,
+	.icon-pause,
+	.icon-resume,
+	.icon-up,
+	.icon-down,
+	.icon-logout,
+	.icon-help,
+	.x-deluge-connection-manager,
+	.x-deluge-preferences,
+	.icon-logout {
 		font-size: 0 !important;
 		height: 35px !important;
 		width: 35px !important;
 		background-size: cover !important;
-		background-repeat: no-repeat !important;		
+		background-repeat: no-repeat !important;
 	}
-	
-	.x-layout-collapsed-south{
+	#btn-simulate-right-click {
+		width: 53px;
+		height: 47px;
+	}
+	#btn-simulate-right-click .icon-menu {
+		min-width: 35px !important;
+		height: 35px !important;
+		background-size: 32px !important;
+		background-position: center !important;
+	}
+	#btn-simulate-right-click span {
+		display: none !important;
+	}
+
+	.x-layout-collapsed-south {
 		height: 25px !important;
 	}
 
 	.x-tool-collapse-south {
 		position: absolute !important;
 	}
-	
-	.deluge-sidebar{
+
+	.deluge-sidebar {
 		width: 99% !important;
 	}
 
@@ -79,19 +106,21 @@
 	}
 
 	.x-toolbar-left-row {
-		display: block !important;
+		display: flex !important;
+		flex-direction: row;
 		width: 0px !important;
 	}
 
 	.x-toolbar-layout-ct {
 		overflow-x: scroll !important;
 	}
-	
+
 	.x-grid3-row {
 		padding: 10px 0 10px 0;
 	}
 
-	.x-grid3-cell-inner, .x-grid3-hd-inner {
+	.x-grid3-cell-inner,
+	.x-grid3-hd-inner {
 		font-size: 18px;
 	}
 
@@ -104,31 +133,32 @@
 	}
 
 	.x-grid3-td-queue {
-		width:28px !important;
+		width: 28px !important;
 	}
 
-	.x-grid3-td-name, .x-grid3-hd-name{
+	.x-grid3-td-name,
+	.x-grid3-hd-name {
 		width: 400px !important;
 	}
 
 	.x-grid3-td-2 {
 		width: 110px !important;
 	}
-	
+
 	.x-grid3-td-6 {
 		width: 130px !important;
 	}
-	
+
 	.x-grid3-td-7 {
 		width: 130px !important;
 	}
-	
+
 	.x-grid3-td-8 {
 		width: 100px !important;
 	}
 
 	.x-window-footer .x-toolbar-layout-ct .x-toolbar-ct .x-toolbar-right {
-		left:0;
+		left: 0;
 		position: fixed;
 		background-color: #1c1c1c;
 		width: 100%;
@@ -147,7 +177,7 @@
 		font-size: 16px !important;
 	}
 	.x-fieldset-bwrap .x-fieldset-body.x-table-layout-ct {
-	    width: 100% !important;
+		width: 100% !important;
 	}
 	.x-column-inner .x-panel.x-panel-noborder.x-column {
 		width: 100% !important;
@@ -158,10 +188,31 @@
 	.x-column-inner .x-fieldset.x-column {
 		height: 140px !important;
 	}
+	#torrentMenu {
+		left: 0px !important;
+		top: 76px !important;
+		height: fit-content;
+		max-block-size: calc(100vh - 100px);
+		overflow-y: auto;
+	}
+	#torrentMenu .x-menu-item-icon {
+		width: 16px !important;
+		height: 16px !important;
+	}
+	.x-shadow {
+		display: none;
+	}
+	tr:has(.x-toolbar-left) {
+		display: grid;
+		grid-template-columns: 500px 100px;
+		width: 100%;
+		overflow-x: auto;
+	}
 }
 
 @media (max-width: 360px) {
-	.x-deluge-main-panel, .icon-help{
-		display:none !important;
-	}	
+	.x-deluge-main-panel,
+	.icon-help {
+		display: none !important;
+	}
 }
