@@ -1,8 +1,9 @@
 /* 
-    Access the torrent right click menu on a mobile device.
+    Access the torrent right click menu on a mobile device on the Deluge WebUI.
+    Version: 1.0.0
     Author: github.com/joelacus
 */
-if (!document.getElementById('#btn-simulate-right-click')) {
+if (!document.querySelector('#btn-simulate-right-click')) {
 	// Create "open menu" button
 	const button = document.createElement('button');
 	button.id = 'btn-simulate-right-click';
