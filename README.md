@@ -6,13 +6,98 @@ Different coloured rows depending on the torrent state. (Colours can be customis
 
 Automatically uses an optimised view for mobile devices with small screens.
 
-Works with [Deluge 2](#deluge-2), [Deluge 1.3](#deluge-1), [Docker](#deluge-docker), [Nginx](#nginx-proxy-manager), [TrueNAS](#deluge-truenas), and [Windows](#windows).
+<br />
 
-[Add a toolbar button to simulate a right click for touch devices](#simulate-right-click)
+Proxy install (easy install and automatic updates): [All](#all), [Nginx](#nginx-proxy-manager).
+
+Local install (manual updates): [Deluge 2](#deluge-2), [Deluge 1.3](#deluge-1), [Docker](#deluge-docker), [TrueNAS](#deluge-truenas), and [Windows](#windows).
+
+Optional, add a toolbar button to simulate a right click for touch devices [Scroll to guide](#simulate-right-click).
+
+<br />
 
 ![Alt text](screenshot.png?raw=true 'Optional Title')
 
-## INSTALL
+## INSTALL (Proxy)
+
+&nbsp;&nbsp;&nbsp;Link to remotely hosted stylesheets and icons.<br />
+
+## All
+
+1. Edit `index.html`
+
+```
+sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/index.html
+```
+
+&nbsp;&nbsp;&nbsp;Possible alternative location (python version may differ):
+
+```
+sudo nano /usr/lib/python3.13/site-packages/deluge/ui/web/index.html
+```
+
+&nbsp;&nbsp;&nbsp;Note: To get the location for Docker, check [Step 3 and 4](#post-install) of the Docker guide.<br />
+&nbsp;&nbsp;&nbsp;To get the location for Windows, check [Step 5](#windows) of the Windows guide.
+
+&nbsp;&nbsp;&nbsp;Add the following line at the bottom of the "Stylesheets" section in the \<head\> of the HTML file:
+
+```
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/joelacus/deluge-web-dark-theme/refs/heads/main/deluge-dark-theme-proxy.css">
+```
+
+2. Add the following meta tag inside \<head\> (This prevents scaling issues on mobile devices):
+
+```
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+```
+
+3. (optional) Add this stylesheet inside \<head\> to change the colours.
+
+```
+<style>
+   :root {
+      --accent: 156, 39, 176 !important;
+      --downloading: 76, 175, 80, 0.5 !important;
+      --seeding: 33, 150, 243, 0.5 !important;
+      --paused: 255, 152, 0, 0.5 !important;
+      --queued: 255, 235, 59, 0.5 !important;
+      --error: 244, 67, 54, 0.5 !important;
+      --font: ubuntu, verdana, arial, tahoma, helvetica, sans-serif !important;
+      --text: #fff !important;
+      --bg: #1c1c1c !important;
+      --shade1: #222 !important;
+      --shade2: #333 !important;
+   }
+</style>
+```
+
+4. (optional) Add a toolbar button to simulate a right click for touch devices.<br />
+   [Scroll to guide](#simulate-right-click)
+
+5. Enjoy! :) [tip](https://ko-fi.com/joelacus)
+
+<br />
+<br />
+
+## Nginx Proxy Manager
+
+&nbsp;&nbsp;&nbsp;Nginx config:
+
+```
+proxy_set_header Accept-Encoding "";
+sub_filter
+'</head>'
+'<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/joelacus/deluge-web-dark-theme/refs/heads/main/deluge-dark-theme-proxy.css">
+</head>';
+sub_filter_once on;
+```
+
+<br />
+<br />
+
+## INSTALL (Local)
+
+&nbsp;&nbsp;&nbsp;Install all the theme files locally on your system.<br />
 
 ## Deluge 2
 
@@ -72,13 +157,11 @@ sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/index.html
 sudo nano /usr/lib/python3.13/site-packages/deluge/ui/web/index.html
 ```
 
-&nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header:
+&nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header (This prevents scaling issues on mobile devices):
 
 ```
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 ```
-
-&nbsp;&nbsp;&nbsp;This prevents scaling issues on mobile devices.
 
 6. Restart deluge-web
 
@@ -101,7 +184,10 @@ sudo nano /usr/lib/python3.13/site-packages/deluge/ui/web/themes/css/xtheme-dark
 &nbsp;&nbsp;&nbsp;Replace the variable values `--accent: 156,39,176;` with any RGB value.<br>
 &nbsp;&nbsp;&nbsp;Note: If you don't see the updated accent colour, force reload the deluge web-ui page with `Ctrl+Shift+R`.
 
-8. Enjoy! :) [tip](https://ko-fi.com/joelacus)
+8. (optional) Add a toolbar button to simulate a right click for touch devices.<br />
+   [Scroll to guide](#simulate-right-click)
+
+9. Enjoy! :) [tip](https://ko-fi.com/joelacus)
 
 <br />
 <br />
@@ -146,13 +232,11 @@ sudo nano /var/lib/deluge/.config/deluge/web.conf
 sudo nano /usr/lib/python2.7/dist-packages/deluge/ui/web/index.html
 ```
 
-&nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header:
+&nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header (This prevents scaling issues on mobile devices):
 
 ```
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 ```
-
-&nbsp;&nbsp;&nbsp;This prevents scaling issues on mobile devices.
 
 6. Restart deluge-web
 
@@ -169,7 +253,10 @@ sudo nano /usr/lib/python2.7/dist-packages/deluge/ui/web/themes/css/xtheme-dark.
 &nbsp;&nbsp;&nbsp;Replace the variable values `--accent: 156,39,176;` with any RGB value.<br>
 &nbsp;&nbsp;&nbsp;Note: If you don't see the updated accent colour, force reload the deluge web-ui page with `Ctrl+Shift+R`.
 
-8. Enjoy! :) [tip](https://ko-fi.com/joelacus)
+8. (optional) Add a toolbar button to simulate a right click for touch devices.<br />
+   [Scroll to guide](#simulate-right-click)
+
+9. Enjoy! :) [tip](https://ko-fi.com/joelacus)
 
 <br />
 <br />
@@ -277,13 +364,11 @@ sudo find / -type d -name 'web'
 sudo nano <PATH>/index.html
 ```
 
-&nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header:
+&nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header (This prevents scaling issues on mobile devices):
 
 ```
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 ```
-
-&nbsp;&nbsp;&nbsp;This prevents scaling issues on mobile devices.
 
 5. Restart the deluge docker container:
 
@@ -306,23 +391,10 @@ sudo nano <PATH>/themes/css/xtheme-dark.css
 &nbsp;&nbsp;&nbsp;Replace the variable values `--accent: 156,39,176;` with any RGB value.<br>
 &nbsp;&nbsp;&nbsp;Note: If you don't see the updated accent colour, force reload the deluge web-ui page with `Ctrl+Shift+R`.
 
-7. Enjoy! :) [tip](https://ko-fi.com/joelacus)
+7. (optional) Add a toolbar button to simulate a right click for touch devices.<br />
+   [Scroll to guide](#simulate-right-click)
 
-<br />
-<br />
-
-## Nginx Proxy Manager
-
-&nbsp;&nbsp;&nbsp;Nginx config:
-
-```
-proxy_set_header Accept-Encoding "";
-sub_filter
-'</head>'
-'<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/joelacus/deluge-web-dark-theme/refs/heads/main/deluge-dark-theme-proxy.css">
-</head>';
-sub_filter_once on;
-```
+8. Enjoy! :) [tip](https://ko-fi.com/joelacus)
 
 <br />
 <br />
@@ -367,13 +439,11 @@ sed -i '' -e "s/gray/dark/" ~deluge/.config/deluge/web.conf
 nano /usr/local/lib/python3.8/site-packages/deluge/ui/web/index.html
 ```
 
-&nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header:
+&nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header (This prevents scaling issues on mobile devices):
 
 ```
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 ```
-
-&nbsp;&nbsp;&nbsp;This prevents scaling issues on mobile devices.
 
 7. Restart deluge-web
 
@@ -390,7 +460,10 @@ nano /usr/local/lib/python3.8/site-packages/deluge/ui/web/themes/css/xtheme-dark
 &nbsp;&nbsp;&nbsp;Replace the variable values `--accent: 156,39,176;` with any RGB value.<br>
 &nbsp;&nbsp;&nbsp;Note: If you don't see the updated accent colour, force reload the deluge web-ui page with `Ctrl+Shift+R`.
 
-9. Enjoy! :) [tip](https://ko-fi.com/joelacus)
+9. (optional) Add a toolbar button to simulate a right click for touch devices.<br />
+   [Scroll to guide](#simulate-right-click)
+
+10. Enjoy! :) [tip](https://ko-fi.com/joelacus)
 
 <br />
 <br />
@@ -427,13 +500,11 @@ C:\config_location
 C:\Program Files\Deluge\deluge\ui\web\
 ```
 
-&nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header:
+&nbsp;&nbsp;&nbsp;and add the following meta tag on the empty line 19 in the header (This prevents scaling issues on mobile devices):
 
 ```
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 ```
-
-&nbsp;&nbsp;&nbsp;This prevents scaling issues on mobile devices.
 
 6. (optional) You can change the accent colour and row colours by editing `xtheme-dark.css` with Notepad (as Admin):<br>
    (Change "Text Documents (.txt)" to "All Files" in the Open dialogue).
@@ -445,7 +516,10 @@ C:\Program Files\Deluge\deluge\ui\web\themes\css\
 &nbsp;&nbsp;&nbsp;Replace the variable values `--accent: 156,39,176;` with any RGB value.<br>
 &nbsp;&nbsp;&nbsp;Note: If you don't see the updated accent colour, force reload the deluge web-ui page with `Ctrl+Shift+R`.
 
-7. Enjoy! :) [tip](https://ko-fi.com/joelacus)
+7. (optional) Add a toolbar button to simulate a right click for touch devices.<br />
+   [Scroll to guide](#simulate-right-click)
+
+8. Enjoy! :) [tip](https://ko-fi.com/joelacus)
 
 <br />
 <br />
@@ -466,7 +540,10 @@ sudo nano /usr/lib/python3/dist-packages/deluge/ui/web/index.html
 sudo nano /usr/lib/python3.13/site-packages/deluge/ui/web/index.html
 ```
 
-2. Add this line to the bottom of the "Javascript" section in the \<head\> of the html file:
+&nbsp;&nbsp;&nbsp;Note: To get the location for Docker, check [Step 3 and 4](#post-install) of the Docker guide.<br />
+&nbsp;&nbsp;&nbsp;To get the location for Windows, check [Step 5](#windows) of the Windows guide.
+
+2. Add this line to the bottom of the "Javascript" section in the \<head\> of the HTML file:
 
 ```
 <script type="text/javascript" src="https://cdn.rawgit.com/joelacus/deluge-web-dark-theme/refs/heads/main/deluge_simulate_right_click.js" defer></script>
