@@ -14,8 +14,12 @@ if (!document.getElementById('#btn-simulate-right-click')) {
 		if (!element) return;
 		simulateRightClick(element);
 		// Get the selected row position and move the context menu to be underneath
-		document.querySelector('#torrentMenu').style.left = getElementPosition(element).x + 'px';
-		document.querySelector('#torrentMenu').style.top = getElementPosition(element).y + 28 + 'px';
+		const x = getElementPosition(element).x + 'px';
+		const y = getElementPosition(element).y + 28 + 'px';
+		document.querySelector('#torrentMenu').style.left = x;
+		document.querySelector('#torrentMenu').style.top = y;
+		document.querySelector('.x-shadow').style.left = x;
+		document.querySelector('.x-shadow').style.top = y;
 	});
 	// Append the button to the top toolbar
 	setTimeout(() => {
