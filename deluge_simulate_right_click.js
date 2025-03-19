@@ -2,37 +2,35 @@
     Access the torrent right click menu on a mobile device.
     Author: github.com/joelacus
 */
-document.addEventListener('DOMContentLoaded', function (event) {
-	if (!document.querySelector('.btn-simulate-right-click')) {
-		// Create "open menu" button
-		const button = document.createElement('button');
-		button.textContent = 'Open Selected Row Menu';
-		button.id = '#btn-simulate-right-click';
-		button.classList.add('x-btn');
-		button.setAttribute('style', 'color: #fff;padding: 6px;font-size: 12px;');
-		button.addEventListener('click', function (e) {
-			const element = document.querySelector('.x-grid3-row-selected');
-			if (!element) return;
-			simulateRightClick(element);
-			// Get the selected row position and move the context menu to be underneath
-			document.querySelector('#torrentMenu').style.left = getElementPosition(element).x + 'px';
-			document.querySelector('#torrentMenu').style.top = getElementPosition(element).y + 28 + 'px';
-		});
-		// Append the button to the top toolbar
-		setTimeout(() => {
-			document.querySelector('.x-toolbar-left-row')?.append(button);
-		}, 1000);
-		// Ensure the button is loaded
-		setTimeout(() => {
-			if (document.getElementById('#btn-simulate-right-click')) return;
-			document.querySelector('.x-toolbar-left-row')?.append(button);
-		}, 5000);
-		setTimeout(() => {
-			if (document.getElementById('#btn-simulate-right-click')) return;
-			document.querySelector('.x-toolbar-left-row')?.append(button);
-		}, 10000);
-	}
-});
+if (!document.getElementById('#btn-simulate-right-click')) {
+	// Create "open menu" button
+	const button = document.createElement('button');
+	button.textContent = 'Open Selected Row Menu';
+	button.id = '#btn-simulate-right-click';
+	button.classList.add('x-btn');
+	button.setAttribute('style', 'color: #fff;padding: 6px;font-size: 12px;');
+	button.addEventListener('click', function (e) {
+		const element = document.querySelector('.x-grid3-row-selected');
+		if (!element) return;
+		simulateRightClick(element);
+		// Get the selected row position and move the context menu to be underneath
+		document.querySelector('#torrentMenu').style.left = getElementPosition(element).x + 'px';
+		document.querySelector('#torrentMenu').style.top = getElementPosition(element).y + 28 + 'px';
+	});
+	// Append the button to the top toolbar
+	setTimeout(() => {
+		document.querySelector('.x-toolbar-left-row')?.append(button);
+	}, 1000);
+	// Ensure the button is loaded
+	setTimeout(() => {
+		if (document.getElementById('#btn-simulate-right-click')) return;
+		document.querySelector('.x-toolbar-left-row')?.append(button);
+	}, 5000);
+	setTimeout(() => {
+		if (document.getElementById('#btn-simulate-right-click')) return;
+		document.querySelector('.x-toolbar-left-row')?.append(button);
+	}, 10000);
+}
 
 // Simulate a right click action on the selected row
 function simulateRightClick(element) {
