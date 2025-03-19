@@ -1,4 +1,4 @@
-html,
+/*html,
 body {
 	font: normal 11px arial, tahoma, helvetica, sans-serif;
 	margin: 0;
@@ -12,18 +12,18 @@ body {
 
 input {
 	color: Black;
-}
+}*/
 
-/* remove dotted line on buttons in Firefox */
+/* remove dotted line on buttons in Firefox 
 button::-moz-focus-inner {
 	border: 0;
-}
+}*/
 
 .x-deluge-main-panel {
 	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/deluge.png') !important;
 }
 
-.x-deluge-logo {
+/*.x-deluge-logo {
 	background-image: url('../ui_images/deluge-about.png');
 }
 
@@ -51,7 +51,7 @@ button::-moz-focus-inner {
 
 .deluge-torrents .deluge-torrent-progress {
 	text-align: center;
-}
+}*/
 
 /* Icon classes */
 .x-deluge-all {
@@ -127,7 +127,7 @@ button::-moz-focus-inner {
 	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/find_more.png') !important;
 }
 
-/* Torrent Details */
+/* Torrent Details 
 #torrentDetails dl,
 #torrentDetails dl.singleline {
 	float: left;
@@ -163,9 +163,9 @@ dl.singleline dd {
 
 .x-deluge-plugins {
 	background: White;
-}
+}*/
 
-/* Torrent Details - Status Tab */
+/* Torrent Details - Status Tab 
 .x-deluge-status-progressbar {
 	margin: 5px;
 }
@@ -198,9 +198,9 @@ dl.singleline dd {
 }
 .x-deluge-status dd.last_seen_complete {
 	width: 100px;
-}
+}*/
 
-/* Torrent Details - Details Tab */
+/* Torrent Details - Details Tab 
 #torrentDetails dd.torrent_name,
 #torrentDetails dd.status,
 #torrentDetails dd.tracker,
@@ -221,7 +221,7 @@ dl.singleline dd {
 	position: fixed;
 	right: 0;
 	margin: 5px 10px;
-}
+}*/
 
 /* Login Window */
 .x-deluge-login-window-icon {
@@ -238,7 +238,7 @@ dl.singleline dd {
 	background: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/add.png') no-repeat 2px !important;
 }
 
-.x-deluge-add-torrent-name {
+/*.x-deluge-add-torrent-name {
 	line-height: 20px;
 }
 
@@ -246,12 +246,12 @@ dl.singleline dd {
 	padding-left: 20px;
 	line-height: 20px;
 	background: url('/themes/default/tree/loading.gif') no-repeat 2px;
-}
+}*/
 
 /* Add Url Window */
 .x-deluge-add-file,
 .x-btn .x-deluge-add-file {
-	background: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/add_file.png') no-repeat 2px !important;
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/add_file.png') !important;
 }
 
 .x-deluge-add-url-window-icon {
@@ -260,24 +260,24 @@ dl.singleline dd {
 
 /* Connect Window */
 .x-deluge-connect-window-icon {
-	background: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/connection_manager.png') no-repeat 2px !important;
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/connection_manager.png') !important;
 }
 
-/* Statusbar */
+/* Statusbar 
 .x-deluge-statusbar {
 	background: no-repeat 2px !important;
 	padding-left: 20px !important;
-}
+}*/
 
 .x-not-connected {
 	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/error.png') !important;
 }
 
-.x-connected {
+/*.x-connected {
 	background-image: none !important;
-}
+}*/
 
-/* Styles for renderered progress bars */
+/* Styles for renderered progress bars 
 .x-progress-renderered .x-progress-bar {
 	height: 16px;
 }
@@ -285,9 +285,9 @@ dl.singleline dd {
 .x-progress-renderered .x-progress-bar .x-progress-text {
 	margin-top: -1px;
 	height: 18px;
-}
+}*/
 
-/* Adjust progressbar for torrent files tree */
+/* Adjust progressbar for torrent files tree 
 .x-tree .x-progress-wrap {
 	width: 100px;
 }
@@ -311,9 +311,9 @@ dl.singleline dd {
 
 .x-tree .x-progress-renderered .x-progress-bar .x-progress-text {
 	margin-top: 0px;
-}
+}*/
 
-/* Files TreeGrid */
+/* Files TreeGrid 
 .x-treegrid-root-table {
 	border-right: 1px solid;
 }
@@ -364,18 +364,18 @@ dl.singleline dd {
 .x-treegrid-resizer {
 	border-left-color: #555;
 	border-right-color: #555;
-}
+}*/
 
-/* Options Tab Styles */
+/* Options Tab Styles 
 .x-deluge-options-label {
 	margin-right: 10px;
 }
 
 .x-deluge-indent-checkbox {
 	padding-left: 10px;
-}
+}*/
 
-/* Sidebar styles */
+/* Sidebar styles 
 #sidebar .x-grid3-col-filter {
 	height: 16px;
 	line-height: 16px;
@@ -393,7 +393,7 @@ dl.singleline dd {
 
 #sidebar .x-list-selected em {
 	font-weight: bold;
-}
+}*/
 
 /* MessageBox icon styles */
 .x-deluge-icon-warning {
@@ -408,11 +408,11 @@ dl.singleline dd {
 	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/document.png') !important;
 }
 
-.x-deluge-add-file-checkbox {
+/*.x-deluge-add-file-checkbox {
 	margin-top: 2px;
-}
+}*/
 
-/* Filepriority styles */
+/* Filepriority styles 
 .x-no-download,
 .x-low-download,
 .x-normal-download,
@@ -421,7 +421,7 @@ dl.singleline dd {
 	padding-left: 20px;
 	background-repeat: no-repeat;
 	line-height: 16px;
-}
+}*/
 
 .x-no-download {
 	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/no_download.png') !important;
@@ -439,9 +439,9 @@ dl.singleline dd {
 	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/high.png') !important;
 }
 
-.x-mixed-download {
-	/*background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/mixed.png) !important;*/
-}
+/*.x-mixed-download {
+	background-image: url('https://raw.githubusercontent.com/joelacus/deluge-web-dark-theme/refs/heads/main/src/icons/mixed.png) !important;
+}*/
 
 /**
  * Deluge Default Icon Set
