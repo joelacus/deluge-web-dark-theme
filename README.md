@@ -299,7 +299,13 @@ sudo wget -c https://github.com/joelacus/deluge-web-dark-theme/raw/main/deluge_w
 - ~/docker_config/deluge/ui/themes:/usr/lib/python3/dist-packages/deluge/ui/web/themes
 ```
 
-&nbsp;&nbsp;&nbsp;Note: Your path may differ slightly. Such as `/usr/lib/python3.10/site-packages/deluge/...`
+&nbsp;&nbsp;&nbsp;Note: Your path may differ slightly. For example, for Unraid and some other systems:
+
+```
+- ~/docker_config/deluge/ui/icons:/usr/lib/python3.13/site-packages/deluge/ui/web/icons
+- ~/docker_config/deluge/ui/images:/usr/lib/python3.13/site-packages/deluge/ui/web/images
+- ~/docker_config/deluge/ui/themes:/usr/lib/python3.13/site-packages/deluge/ui/web/themes
+```
 
 &nbsp;&nbsp;&nbsp;Example:
 
