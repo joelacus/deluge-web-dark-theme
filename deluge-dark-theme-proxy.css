@@ -9,7 +9,7 @@
 
 /*  
     Deluge Dark Theme
-    Version: 1.9.1 (Proxy)
+    Version: 1.9.2 (Proxy)
     Author: github.com/joelacus
 
     Accent Colour Presets:
@@ -2311,7 +2311,7 @@ dl.singleline dd {
 #btn-simulate-right-click {
 	display: flex;
 	flex-direction: row;
-	padding: 5px;
+	padding: 6px;
 }
 
 #btn-simulate-right-click .icon-menu {
