@@ -8,7 +8,7 @@
 
 /*  
     Deluge Dark Theme
-    Version: 1.9.2
+    Version: 1.9.3
     Author: github.com/joelacus
 
     Accent Colour Presets:
@@ -1379,8 +1379,10 @@ td.x-date-mp-sep {
 .x-tip-anchor {
 	background-image: url(../images/gray/qtip/tip-anchor-sprite.gif);
 }
-/*.x-menu {
-}*/
+.x-menu {
+	background-color: transparent !important;
+	background-image: none !important;
+}
 
 .x-menu-floating {
 	border-color: #161616;
